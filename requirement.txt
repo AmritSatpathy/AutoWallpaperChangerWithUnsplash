@@ -1,0 +1,6 @@
+pyinstaller-hooks-contrib==2020.9
+pywin32==227
+pywin32-ctypes==0.2.0
+requests==2.23.0
+urllib3==1.25.9
+
