@@ -11,12 +11,12 @@ import datetime
 def wallpaper():
     f = open("date.txt", "r")
     if (f.read() != datetime.today().strftime('%m/%d/%Y')):
-        onlyfiles = [f for f in listdir("C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger") if isfile(join("C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger", f))]
+        onlyfiles = [f for f in listdir(dirname) if isfile(join(dirname, f))]
         for f in onlyfiles:
             if (os.path.splitext(f)[1] == ".jpg"):
                 os.remove(f)
                 print("deleting..")
-        r = requests.get("https://api.unsplash.com/search/collections?query=wallpaper&page=1&per_page=48&client_id=os6QVPyOEnV7FWHPx-CmTpWA2JF8qEACv5VMwu1_BOo")
+        r = requests.get("https://api.unsplash.com/search/collections?query=wallpaper&page=1&per_page=48&client_id=addurunsplashkey")
         data = r.json()
         for img_data in data['results']:
             file_name = str(img_data['id']) + ".jpg"
@@ -34,12 +34,12 @@ def wallpaper():
         return
 def set():
     listimage = []
-    onlyfiles = [f for f in listdir("C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger") if
-                 isfile(join("C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger", f))]
+    onlyfiles = [f for f in listdir(dirname) if
+                 isfile(join(dirname, f))]
     for f in onlyfiles:
         if (os.path.splitext(f)[1] == ".jpg"):
             listimage.append(f)
-    dirname = "C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger\\"
+    global dirname = "C:\\Users\\red_tomato\\PycharmProjects\\autowallpaperchanger\\"
     for image in listimage:
         ctypes.windll.user32.SystemParametersInfoW(20, 0, dirname + image, 0)
         time.sleep(1800)
