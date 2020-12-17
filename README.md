@@ -15,3 +15,5 @@ This will start the auto desktop wallpaper changer which will fetch 48 images fr
 
 ### Update
 Just Download and go to dist and start main.exe to start the app 
+
+###### Still a bit buggy would love to improve
