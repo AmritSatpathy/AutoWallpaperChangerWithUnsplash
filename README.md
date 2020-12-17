@@ -1,4 +1,4 @@
-# AutoWallpaperChangerWithUnsplash
+# Auto Wallpaper Changer With Unsplash
 
 ### Installation
 
@@ -12,3 +12,6 @@ $ py main.py
 This will start the auto desktop wallpaper changer which will fetch 48 images from Unslpash daily and change the wallpaper image within 30 minutes
 
 ---
+
+### Update
+Just Download and go to dist and start main.exe to start the app 
